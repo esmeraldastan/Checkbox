@@ -41,15 +41,31 @@ def pressed():
     #disable chrging the text box
     editor.config(state = Tkinter.DISABLE)
     #editor.config(state = Tkinter.NORMAL)
+def quit():
+    global root
+    root.destroy()
     
+button = Tkinter.Button(root, text= 'QUIT', width = 10, height = 5, command = root.destroy)
+button.grid(row = 1, column= 4)
+'''
+button2 = Tkinter.Button(root, text= 'Add 2', height = 5, command = lambda: pressed(2))
+button2.grid(row = 1, column= 1, pady = 100)
 
+button3 = Tkinter.Button(root, text= 'Add 3', height = 5, command = lambda: pressed(3))
+button3.grid(row = 1, column= 2, pady = 100)
+
+button4 = Tkinter.Button(root, text= 'Add 4', height = 5, command = lambda: pressed(4))
+button4.grid(row = 1, column= 3, pady = 100)
+
+button5 = Tkinter.Button(root, text= 'Add 5', height = 5, command = lambda: pressed(5))
+button5.grid(row = 1, column= 4, pady = 100)'''
 
 
 radio =[0]*4 #creat a list
 data = Tkinter.IntVar()
 for i in range(4):
-    radio[i]= Tkinter.Radiobutton(root, text=str(i), variable = data, value = i, indicatoron = 0, command = pressed )
-    radio[i].grid(row = 1, column = i)
+    radio[i]= Tkinter.Radiobutton(root, text=str(i), variable = data, value = i)
+    radio[i].grid(row = 2, column = i)
 data.set(3)
 
 root.mainloop()
