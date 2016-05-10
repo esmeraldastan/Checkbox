@@ -56,12 +56,12 @@ button4.grid(row = 1, column= 3, pady = 100)
 
 button5 = Tkinter.Button(root, text= 'Add 5', height = 5, command = lambda: pressed(5))
 button5.grid(row = 1, column= 4, pady = 100)
-'''
+
 radio =[0]*4 #creat a list
 data = Tkinter.IntVar()
 for i in range(4):
     radio[i]= Tkinter.Radiobutton(root, text=str(i), variable = data, value = i)
     radio[i].grid(row = 2, column = i)
-data.set(3)'''
+data.set(3)
 
 root.mainloop()

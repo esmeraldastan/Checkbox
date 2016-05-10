@@ -30,7 +30,7 @@ def pressed():
     times_pressed += 1
     #recreates the text box
     customFont = tkFont.Font(family = 'Serif', size = 40)
-    editor = Tkinter.Text(width = 25, height =4, font =(customFont))
+    editor = Tkinter.Text(width = 20, height =2, font = customFont)
     editor.grid(row = 0, column = 0) 
     
     #adds the text to the box
@@ -41,31 +41,44 @@ def pressed():
     #disable chrging the text box
     editor.config(state = Tkinter.DISABLE)
     #editor.config(state = Tkinter.NORMAL)
+    
+
+    #stuff
+            
+button = Tkinter.Button(root, text= 'QUIT', width = 10, height = 5, command = root.destroy)
+button.grid(row = 1, column= 4)
+
 def quit():
     global root
     root.destroy()
+
+def newWindow():
+    root2 = Tkinter.Tk()
+    editor2 = Tkinter.Text(master = root2, width= 45, height = 0)
+    editor2.grid( row= 0 , column = 0, sticky = (Tkinter.N, Tkinter.W, Tkinter.E))
+    editor2.insert(Tkinter.END,"heyyo")
+    editor2.see(Tkinter.END)
     
-button = Tkinter.Button(root, text= 'QUIT', width = 10, height = 5, command = root.destroy)
-button.grid(row = 1, column= 4)
-'''
-button2 = Tkinter.Button(root, text= 'Add 2', height = 5, command = lambda: pressed(2))
-button2.grid(row = 1, column= 1, pady = 100)
+    button2 = Tkinter.Button(root2, text= 'New Window', height = 5, command = newWindow)
+    button2.grid(row = 1, column= 1)
+    
+    button = Tkinter.Button(root2, text= 'QUIT', width = 10, height = 5, command = root2.destroy)
+    button.grid(row = 1, column= 0) 
+ 
+         
+button2 = Tkinter.Button(root, text= 'New Window', height = 5, command = newWindow)
+button2.grid(row = 1, column= 5)
+    #stuff
 
-button3 = Tkinter.Button(root, text= 'Add 3', height = 5, command = lambda: pressed(3))
-button3.grid(row = 1, column= 2, pady = 100)
-
-button4 = Tkinter.Button(root, text= 'Add 4', height = 5, command = lambda: pressed(4))
-button4.grid(row = 1, column= 3, pady = 100)
-
-button5 = Tkinter.Button(root, text= 'Add 5', height = 5, command = lambda: pressed(5))
-button5.grid(row = 1, column= 4, pady = 100)'''
 
 
 radio =[0]*4 #creat a list
 data = Tkinter.IntVar()
 for i in range(4):
     radio[i]= Tkinter.Radiobutton(root, text=str(i), variable = data, value = i)
-    radio[i].grid(row = 2, column = i)
+    radio[i].grid(row = 3, column = i)
 data.set(3)
+
+
 
 root.mainloop()
