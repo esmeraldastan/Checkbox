@@ -9,7 +9,7 @@ root.title('ChaseRekz')
 #check = canvas.create_line(100, 250, 150, 300, 220, 150, fill = 'green', width = 20)
 #message = canvas.create_text(380, 250, text = 'Try this!', font = ('Arial', -100))
 
-#######################
+######################
 #Checkbox
 #####################
 
