@@ -2,9 +2,14 @@ import Tkinter, tkFont
 #Graphical User Interface (GUI)
 root = Tkinter.Tk()
 root.title('ChaseRekz')
-#canvas = Tkinter.Canvas(root, height = 300, width = 600, relief = Tkinter.RAISED, bg= 'blue')
-#canvas.grid()
+canvas = Tkinter.Canvas(root, height = 300, width = 600, relief = Tkinter.RAISED, bg= 'blue')
+canvas.grid()
 
+
+#scrolbar
+
+scrollbar = Tkinter.Scrollbar(root)
+scrollbar.grid(row = 0, column = 6 , rowspan = 4)
 #checkbox = canvas.create_rectangle( 100, 200, 200, 300, dash = [1,4])
 #check = canvas.create_line(100, 250, 150, 300, 220, 150, fill = 'green', width = 20)
 #message = canvas.create_text(380, 250, text = 'Try this!', font = ('Arial', -100))
@@ -61,6 +66,12 @@ def newWindow():
     
     button2 = Tkinter.Button(root2, text= 'New Window', height = 5, command = newWindow)
     button2.grid(row = 1, column= 1)
+    
+'''def add():
+    global times_pressed
+    times_pressed += 1
+    editor.insert(Tkinter.END, 'hello' + str(times_pressed)
+    editor. insert(Tkinter.END,'''
     
     button = Tkinter.Button(root2, text= 'QUIT', width = 10, height = 5, command = root2.destroy)
     button.grid(row = 1, column= 0) 
