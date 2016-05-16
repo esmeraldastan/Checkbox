@@ -67,11 +67,11 @@ def newWindow():
     button2 = Tkinter.Button(root2, text= 'New Window', height = 5, command = newWindow)
     button2.grid(row = 1, column= 1)
     
-'''def add():
+def add():
     global times_pressed
     times_pressed += 1
     editor.insert(Tkinter.END, 'hello' + str(times_pressed)
-    editor. insert(Tkinter.END,'''
+    editor.insert(Tkinter.END,"hype")
     
     button = Tkinter.Button(root2, text= 'QUIT', width = 10, height = 5, command = root2.destroy)
     button.grid(row = 1, column= 0) 
